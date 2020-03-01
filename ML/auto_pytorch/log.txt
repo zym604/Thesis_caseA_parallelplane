@@ -1,0 +1,180 @@
+Start time = Tue Nov 19 00:15:59 2019
+finish load and seperating data!
+0.999999999999995
+Configure AutoNet with the following keyword arguments.
+Pass these arguments to either the constructor or fit().
+
+name                                default             choices                       type                                     
+===============================================================================================================================
+additional_logs                     []                  []                            <class 'str'>                            
+-------------------------------------------------------------------------------------------------------------------------------
+additional_metrics                  []                  [mean_distance]               <class 'str'>                            
+-------------------------------------------------------------------------------------------------------------------------------
+algorithm                           bohb                [bohb,                        <class 'str'>                            
+                                                         hyperband]                                                            
+	info: Algorithm to use for config sampling.
+-------------------------------------------------------------------------------------------------------------------------------
+batch_loss_computation_techniques   [standard,          [standard,                    <class 'str'>                            
+                                     mixup]              mixup]                                                                
+-------------------------------------------------------------------------------------------------------------------------------
+best_over_epochs                    False               [True,                        <function to_bool at 0x7f912f45c6a8>     
+                                                         False]                                                                
+	info: Whether to report the best performance occurred to BOHB
+-------------------------------------------------------------------------------------------------------------------------------
+budget_type                         time                [time,                        <class 'str'>                            
+                                                         epochs,                                                               
+                                                         training_time]                                                        
+-------------------------------------------------------------------------------------------------------------------------------
+categorical_features                None                None                          <function to_bool at 0x7f912f45c6a8>     
+	info: List of booleans that specifies for each feature whether it is categorical.
+-------------------------------------------------------------------------------------------------------------------------------
+cross_validator                     none                dict_keys(['none', 'k_fold']) <class 'str'>                            
+	info: Class inheriting from sklearn.model_selection.BaseCrossValidator. Ignored if validation data is given.
+-------------------------------------------------------------------------------------------------------------------------------
+cross_validator_args                {}                  None                          <function to_dict at 0x7f912f3aa158>     
+	info: Args of cross validator. 
+		Note that random_state and shuffle are set by pipeline config options random_seed and shuffle, if not specified here.
+-------------------------------------------------------------------------------------------------------------------------------
+cuda                                True                [True,                        <function to_bool at 0x7f912f45c6a8>     
+                                                         False]                                                                
+-------------------------------------------------------------------------------------------------------------------------------
+dataset_name                        None                None                          <class 'str'>                            
+-------------------------------------------------------------------------------------------------------------------------------
+early_stopping_patience             inf                 None                          <class 'float'>                          
+-------------------------------------------------------------------------------------------------------------------------------
+early_stopping_reset_parameters     False               None                          <function to_bool at 0x7f912f45c6a8>     
+-------------------------------------------------------------------------------------------------------------------------------
+embeddings                          [none]              [none,                        <class 'str'>                            
+                                                         learned]                                                              
+-------------------------------------------------------------------------------------------------------------------------------
+eta                                 3                   None                          <class 'float'>                          
+	info: eta parameter of Hyperband.
+-------------------------------------------------------------------------------------------------------------------------------
+final_activation                    none                [none]                        <class 'str'>                            
+-------------------------------------------------------------------------------------------------------------------------------
+full_eval_each_epoch                False               [True,                        <function to_bool at 0x7f912f45c6a8>     
+                                                         False]                                                                
+	info: Whether to evaluate everything every epoch. Results in more useful output
+-------------------------------------------------------------------------------------------------------------------------------
+hyperparameter_search_space_updates None                None                          [directory,                              
+                                                                                       <function parse_hyperparameter_search_] 
+	info: object of type HyperparameterSearchSpaceUpdates
+-------------------------------------------------------------------------------------------------------------------------------
+imputation_strategies               [mean,              [mean,                        <class 'str'>                            
+                                     median,             median,                                                               
+                                     most_frequent]      most_frequent]                                                        
+-------------------------------------------------------------------------------------------------------------------------------
+initialization_methods              [default,           [default,                     <class 'str'>                            
+                                     sparse]             sparse]                                                               
+-------------------------------------------------------------------------------------------------------------------------------
+initializer                         simple_initializer  [simple_initializer]          <class 'str'>                            
+-------------------------------------------------------------------------------------------------------------------------------
+log_level                           warning             [debug,                       <class 'str'>                            
+                                                         info,                                                                 
+                                                         warning,                                                              
+                                                         error,                                                                
+                                                         critical]                                                             
+-------------------------------------------------------------------------------------------------------------------------------
+loss_modules                        [l1_loss]           [l1_loss]                     <class 'str'>                            
+-------------------------------------------------------------------------------------------------------------------------------
+lr_scheduler                        [cosine_annealing,  [cosine_annealing,            <class 'str'>                            
+                                     plateau]            cyclic,                                                               
+                                                         exponential,                                                          
+                                                         step,                                                                 
+                                                         adapt,                                                                
+                                                         plateau,                                                              
+                                                         alternating_cosine,                                                   
+                                                         none]                                                                 
+-------------------------------------------------------------------------------------------------------------------------------
+max_budget                          6000                None                          <class 'float'>                          
+	info: Max budget for fitting configurations.
+-------------------------------------------------------------------------------------------------------------------------------
+max_runtime                         24000               None                          <class 'float'>                          
+	info: Total time for the run.
+-------------------------------------------------------------------------------------------------------------------------------
+memory_limit_mb                     1000000             None                          <class 'int'>                            
+-------------------------------------------------------------------------------------------------------------------------------
+min_budget                          120                 None                          <class 'float'>                          
+	info: Min budget for fitting configurations.
+-------------------------------------------------------------------------------------------------------------------------------
+min_budget_for_cv                   0                   None                          <class 'float'>                          
+	info: Specify minimum budget for cv. If budget is smaller use specified validation split.
+-------------------------------------------------------------------------------------------------------------------------------
+min_workers                         1                   None                          <class 'int'>                            
+-------------------------------------------------------------------------------------------------------------------------------
+network_interface_name              wlx9cefd5fdb8d5     None                          <class 'str'>                            
+-------------------------------------------------------------------------------------------------------------------------------
+networks                            [shapedresnet]      [mlpnet,                      <class 'str'>                            
+                                                         shapedmlpnet,                                                         
+                                                         resnet,                                                               
+                                                         shapedresnet]                                                         
+-------------------------------------------------------------------------------------------------------------------------------
+normalization_strategies            [none,              [none,                        <class 'str'>                            
+                                     minmax,             minmax,                                                               
+                                     standardize,        standardize,                                                          
+                                     maxabs]             maxabs]                                                               
+-------------------------------------------------------------------------------------------------------------------------------
+num_iterations                      inf                 None                          <class 'float'>                          
+	info: Number of successive halving iterations.
+-------------------------------------------------------------------------------------------------------------------------------
+optimize_metric                     mean_distance       [mean_distance]               <class 'str'>                            
+	info: This is the meta train metric BOHB will try to optimize.
+-------------------------------------------------------------------------------------------------------------------------------
+optimizer                           [adam,              [adam,                        <class 'str'>                            
+                                     adamw,              adamw,                                                                
+                                     sgd,                sgd,                                                                  
+                                     rmsprop]            rmsprop]                                                              
+-------------------------------------------------------------------------------------------------------------------------------
+over_sampling_methods               [none]              [none]                        <class 'str'>                            
+-------------------------------------------------------------------------------------------------------------------------------
+preprocessors                       [none,              [none,                        <class 'str'>                            
+                                     truncated_svd,      truncated_svd,                                                        
+                                     power_transformer]  power_transformer,                                                    
+                                                         fast_ica,                                                             
+                                                         kitchen_sinks,                                                        
+                                                         kernel_pca,                                                           
+                                                         nystroem]                                                             
+-------------------------------------------------------------------------------------------------------------------------------
+random_seed                         657806822           None                          <class 'int'>                            
+	info: Make sure to specify the same seed for all workers.
+-------------------------------------------------------------------------------------------------------------------------------
+refit_validation_split              0.0                 [0,                           <class 'float'>                          
+                                                         1]                                                                    
+	info: In range [0, 1). Part of train dataset used for validation in refit.
+-------------------------------------------------------------------------------------------------------------------------------
+result_logger_dir                   .                   None                          directory                                
+-------------------------------------------------------------------------------------------------------------------------------
+run_id                              0                   None                          <class 'str'>                            
+	info: Unique id for each run.
+-------------------------------------------------------------------------------------------------------------------------------
+run_worker_on_master_node           True                None                          <function to_bool at 0x7f912f45c6a8>     
+-------------------------------------------------------------------------------------------------------------------------------
+shuffle                             True                [True,                        <function to_bool at 0x7f912f45c6a8>     
+                                                         False]                                                                
+	info: Shuffle train and validation set
+-------------------------------------------------------------------------------------------------------------------------------
+target_size_strategies              [none]              [none]                        <class 'str'>                            
+-------------------------------------------------------------------------------------------------------------------------------
+task_id                             -1                  None                          <class 'int'>                            
+	info: ID for each worker, if you run AutoNet on a cluster. Set to -1, if you run it locally.
+-------------------------------------------------------------------------------------------------------------------------------
+torch_num_threads                   1                   None                          <class 'int'>                            
+-------------------------------------------------------------------------------------------------------------------------------
+under_sampling_methods              [none]              [none]                        <class 'str'>                            
+-------------------------------------------------------------------------------------------------------------------------------
+use_pynisher                        True                None                          <function to_bool at 0x7f912f45c6a8>     
+-------------------------------------------------------------------------------------------------------------------------------
+use_tensorboard_logger              False               None                          <function to_bool at 0x7f912f45c6a8>     
+-------------------------------------------------------------------------------------------------------------------------------
+validation_split                    0.3                 [0,                           <class 'float'>                          
+                                                         1]                                                                    
+	info: In range [0, 1). Part of train dataset used for validation. Ignored in fit if cross validator or valid data given.
+-------------------------------------------------------------------------------------------------------------------------------
+working_dir                         .                   None                          directory                                
+-------------------------------------------------------------------------------------------------------------------------------
+
+Warning: hexagon layer count does not match 3 != 4
+
+
+Warning: hexagon layer count does not match 3 != 4
+

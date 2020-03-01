@@ -1,0 +1,43 @@
+Sub Macro3()
+'
+' Macro3 Macro
+'
+mx = 10
+my = 170
+mz = 10
+
+'column 3,4,5
+Column = 8
+pos = 1
+For k = 1 To mz
+    For j = 1 To my
+        For i = 1 To mx
+            Cells(pos, Column) = i
+            Cells(pos, Column + 1) = j
+            Cells(pos, Column + 2) = k
+            pos = pos + 1
+        Next
+    Next
+Next
+
+'select
+cx = 1
+cz = 1
+pos = 1
+For i = 1 To mx * my * mz
+    If Cells(i, Column) = cx And Cells(i, Column + 2) = cz Then
+        Cells(pos, Column + 5) = Cells(i, 8)
+        Cells(pos, Column + 6) = Cells(i, 9)
+        Cells(pos, Column + 7) = Cells(i, 10)
+        Cells(pos, Column + 8) = Cells(i, 1)
+        Cells(pos, Column + 9) = Cells(i, 2)
+        Cells(pos, Column + 10) = Cells(i, 3)
+        Cells(pos, Column + 11) = Cells(i, 4)
+        Cells(pos, Column + 12) = Cells(i, 5)
+        Cells(pos, Column + 13) = Cells(i, 6)
+        Cells(pos, Column + 14) = Cells(i, 7)
+        pos = pos + 1
+    End If
+Next
+'
+End Sub

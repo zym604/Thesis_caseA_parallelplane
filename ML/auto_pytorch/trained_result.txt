@@ -1,0 +1,101 @@
+In [41]: model.eval()
+Out[41]: 
+Sequential(
+  (0): Linear(in_features=2, out_features=437, bias=True)
+  (1): Sequential(
+    (0): ResBlock(
+      (shortcut): Linear(in_features=437, out_features=147, bias=True)
+      (start_norm): Sequential(
+        (0): BatchNorm1d(437, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (1): ReLU()
+      )
+      (layers): Sequential(
+        (0): Linear(in_features=437, out_features=147, bias=True)
+        (1): BatchNorm1d(147, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU()
+        (3): Dropout(p=0.30851922736236553)
+        (4): Linear(in_features=147, out_features=147, bias=True)
+      )
+    )
+    (1): ResBlock(
+      (layers): Sequential(
+        (0): BatchNorm1d(147, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (1): ReLU()
+        (2): Linear(in_features=147, out_features=147, bias=True)
+        (3): BatchNorm1d(147, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (4): ReLU()
+        (5): Dropout(p=0.30851922736236553)
+        (6): Linear(in_features=147, out_features=147, bias=True)
+      )
+    )
+  )
+  (2): Sequential(
+    (0): ResBlock(
+      (layers): Sequential(
+        (0): BatchNorm1d(147, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (1): ReLU()
+        (2): Linear(in_features=147, out_features=147, bias=True)
+        (3): BatchNorm1d(147, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (4): ReLU()
+        (5): Dropout(p=0.0)
+        (6): Linear(in_features=147, out_features=147, bias=True)
+      )
+    )
+    (1): ResBlock(
+      (layers): Sequential(
+        (0): BatchNorm1d(147, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (1): ReLU()
+        (2): Linear(in_features=147, out_features=147, bias=True)
+        (3): BatchNorm1d(147, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (4): ReLU()
+        (5): Dropout(p=0.0)
+        (6): Linear(in_features=147, out_features=147, bias=True)
+      )
+    )
+  )
+  (3): BatchNorm1d(147, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (4): ReLU()
+  (5): Linear(in_features=147, out_features=1, bias=True)
+)
+
+In [42]: res
+Out[42]: 
+{'optimized_hyperparameter_config': {'CreateDataLoader:batch_size': 107,
+  'Imputation:strategy': 'median',
+  'InitializationSelector:initialization_method': 'default',
+  'InitializationSelector:initializer:initialize_bias': 'Yes',
+  'LearningrateSchedulerSelector:lr_scheduler': 'plateau',
+  'LossModuleSelector:loss_module': 'l1_loss',
+  'NetworkSelector:network': 'shapedresnet',
+  'NormalizationStrategySelector:normalization_strategy': 'standardize',
+  'OptimizerSelector:optimizer': 'rmsprop',
+  'PreprocessorSelector:preprocessor': 'power_transformer',
+  'ResamplingStrategySelector:over_sampling_method': 'none',
+  'ResamplingStrategySelector:target_size_strategy': 'none',
+  'ResamplingStrategySelector:under_sampling_method': 'none',
+  'TrainNode:batch_loss_computation_technique': 'standard',
+  'LearningrateSchedulerSelector:plateau:factor': 0.100240530873177,
+  'LearningrateSchedulerSelector:plateau:patience': 8,
+  'NetworkSelector:shapedresnet:activation': 'relu',
+  'NetworkSelector:shapedresnet:blocks_per_group': 2,
+  'NetworkSelector:shapedresnet:max_units': 437,
+  'NetworkSelector:shapedresnet:num_groups': 2,
+  'NetworkSelector:shapedresnet:resnet_shape': 'stairs',
+  'NetworkSelector:shapedresnet:use_dropout': True,
+  'NetworkSelector:shapedresnet:use_shake_drop': False,
+  'NetworkSelector:shapedresnet:use_shake_shake': False,
+  'OptimizerSelector:rmsprop:alpha': 0.1875092870908658,
+  'OptimizerSelector:rmsprop:learning_rate': 0.020394079543990185,
+  'OptimizerSelector:rmsprop:momentum': 0.29586456640302655,
+  'OptimizerSelector:rmsprop:weight_decay': 0.017092656873234635,
+  'PreprocessorSelector:power_transformer:method': 'box-cox',
+  'PreprocessorSelector:power_transformer:standardize': False,
+  'NetworkSelector:shapedresnet:dropout_shape': 'diamond',
+  'NetworkSelector:shapedresnet:max_dropout': 0.30851922736236553},
+ 'budget': 9000.0,
+ 'loss': 0.015461071394383907,
+ 'info': {'loss': 0.06909456104040146,
+  'train_mean_distance': 0.06909456104040146,
+  'lr_scheduler_converged': 0.0,
+  'val_mean_distance': 0.015461071394383907}}
+
