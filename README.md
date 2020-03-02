@@ -1,5 +1,5 @@
 # Thesis_caseA_parallelplane
-This is the backup code for the case A simulation is my thesis.
+This is the backup code for the case A simulation in my thesis.
 
 Case A:
 
